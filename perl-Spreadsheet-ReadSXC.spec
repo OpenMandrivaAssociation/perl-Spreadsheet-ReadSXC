@@ -1,15 +1,13 @@
 %define upstream_name    Spreadsheet-ReadSXC
-%define upstream_version 0.39
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	1
+Version:	0.39
+Release:	2
 
 Summary:	Extract OpenOffice 1.x spreadsheet data
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/Corion/Spreadsheet-ReadSXC
-Source0:	https://cpan.metacpan.org/authors/id/C/CO/CORION/Spreadsheet-ReadSXC-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/C/CO/CORION/Spreadsheet-ReadSXC-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -44,7 +42,7 @@ would contain "-$1,500.99". This is the string which is returned by the
 read_sxc() function, not the value of -1500.99.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
