@@ -1,13 +1,14 @@
 %define upstream_name    Spreadsheet-ReadSXC
+%define upstream_version 0.39
 Name:		perl-%{upstream_name}
 Version:	0.39
-Release:	2
+Release:	1
 
 Summary:	Extract OpenOffice 1.x spreadsheet data
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://github.com/Corion/Spreadsheet-ReadSXC
-Source0:	https://cpan.metacpan.org/authors/id/C/CO/CORION/Spreadsheet-ReadSXC-%{version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/C/CO/CORION/Spreadsheet-ReadSXC-0.39.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -59,15 +60,3 @@ perl Makefile.PL INSTALLDIRS=vendor
 %{_mandir}/man3/*
 %{perl_vendorlib}/*
 
-%changelog
-* Sun Apr 17 2011 Funda Wang <fwang@mandriva.org> 0.200.0-2mdv2011.0
-+ Revision: 654295
-- rebuild for updated spec-helper
-
-* Tue Mar 16 2010 Jérôme Quelin <jquelin@mandriva.org> 0.200.0-1mdv2011.0
-+ Revision: 521751
-- import perl-Spreadsheet-ReadSXC
-
-
-* Tue Mar 16 2010 cpan2dist 0.20-1mdv
-- initial mdv release, generated with cpan2dist
