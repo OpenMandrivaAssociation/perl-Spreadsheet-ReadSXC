@@ -2,7 +2,7 @@
 %define upstream_version 0.39
 Name:		perl-%{upstream_name}
 Version:	0.39
-Release:	3
+Release:	4
 
 Summary:	Extract OpenOffice 1.x spreadsheet data
 License:	GPL+ or Artistic
@@ -52,6 +52,7 @@ perl Makefile.PL INSTALLDIRS=vendor
 %check
 # soft: do not fail package on test failures
 set +e
+make test || :
 %make test || :
 
 %install
