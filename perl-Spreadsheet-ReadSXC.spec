@@ -2,7 +2,7 @@
 %define upstream_version 0.39
 Name:		perl-%{upstream_name}
 Version:	0.39
-Release:	4
+Release:	5
 
 Summary:	Extract OpenOffice 1.x spreadsheet data
 License:	GPL+ or Artistic
@@ -15,6 +15,7 @@ BuildRequires:	perl-devel
 BuildRequires:	perl(Archive::Zip)
 BuildRequires:	perl(Test::More)
 BuildRequires:	perl(XML::Parser)
+BuildRequires:	perl(Moo)
 BuildArch:	noarch
 
 %description
@@ -58,6 +59,8 @@ make test || :
 %install
 %makeinstall_std
 
+find %{buildroot} -type f -name '*.pm' -exec chmod -x {} +
+if [ -d %{buildroot}%{_bindir} ]; then find %{buildroot}%{_bindir} -type f -exec chmod 755 {} +; fi
 %files
 %doc Changes META.yml README
 %{_mandir}/man3/*
